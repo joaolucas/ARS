@@ -3,12 +3,12 @@
         <file>main.qml</file>
     </qresource>
     <qresource prefix="/images">
-           <file>knob.png</file>
-           <file>power_off.png</file>
-           <file>ipower_on.png</file>
-           <file>preset_down.png</file>
-           <file>preset_up.png</file>
-           <file>swatteam.png</file>
-           <file>TextBorder.png</file>
+        <file>images/knob.png</file>
+        <file>images/power_off.png</file>
+        <file>images/power_on.png</file>
+        <file>images/preset_down.png</file>
+        <file>images/preset_up.png</file>
+        <file>images/swatteam.png</file>
+        <file>images/TextBorder.png</file>
     </qresource>
 </RCC>

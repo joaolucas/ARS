@@ -1,7 +1,8 @@
 import QtQuick 2.9
-import QtQuick.Window 2.2
+import QtQuick.Controls 1.2
+import QtQuick.Layouts 1.3
 
-Window {
+ApplicationWindow {
     id: mainViewWindow
     visible: true
     width: 1024
@@ -25,15 +26,50 @@ Window {
 
     //==== MAIN VIEW ====//
     Rectangle{
-     objectName: "mainViewRect"
-     id: mainViewRect
+        objectName: "mainViewRect"
+        id: mainViewRect
 
-     anchors.fill: parent
-     gradient: appGradientId
+        anchors.fill: parent
+        gradient: appGradientId
 
-     //---- Header -----
+        //---- Header -----
+        Rectangle{
+           color :headerBgColor
+           anchors {top : parent.top; left : parent.left; right:parent.right}
+           height: 65
 
-     //---- Controls Area -----
+           RowLayout
+           {
+               id : logoGrid
+               anchors {left: parent.left ;right: parent.right}
+               transform: Translate{x: -20;y:-10}
+
+               Image{
+                   id : swatLogo
+                   source :"images/images/swatteam.png"
+                   //scale: .9
+               }
+
+               Text{
+                   text: "Software and Technical\nTeam\nat Syncor Systems, Inc."
+                   font{family: headerFontFamily;pointSize: companyFontSize}
+                   color: companyFontColor
+               }
+
+               Text{
+                   text: MainViewMgr.appName
+                   font{family: headerFontFamily
+                        pointSize: headerFontSize
+                        weight: Font.Bold}
+                   horizontalAlignment: Text.AlignHCenter
+                   Layout.fillWidth: true;
+                   color :gradientEndColor
+               }
+
+           }
+        }
+
+        //---- Controls Area -----
 
     }
 
