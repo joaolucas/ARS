@@ -2,4 +2,13 @@
     <qresource prefix="/">
         <file>main.qml</file>
     </qresource>
+    <qresource prefix="/images">
+           <file>knob.png</file>
+           <file>power_off.png</file>
+           <file>ipower_on.png</file>
+           <file>preset_down.png</file>
+           <file>preset_up.png</file>
+           <file>swatteam.png</file>
+           <file>TextBorder.png</file>
+    </qresource>
 </RCC>
