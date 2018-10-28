@@ -19,6 +19,7 @@ Startup::Startup(QObject *parent) : QObject(parent),
      m_engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
      WireMainViewMgrToInstrument();
+     m_instrument.Initialize();
 }
 
 void Startup::WireMainViewMgrToInstrument()

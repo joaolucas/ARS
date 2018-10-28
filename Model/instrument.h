@@ -13,6 +13,7 @@ public:
     virtual ~Instrument();
     bool IsConnected() const {return m_isConnected;}
     void EnableTestMode();
+    void Initialize();
 
 signals:
 

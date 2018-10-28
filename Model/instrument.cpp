@@ -1,6 +1,7 @@
 #include "instrument.h"
 #include "utils.h"
 #include <QDebug>
+#include <QThread>
 
 Instrument::Instrument(QObject *parent) :
     QObject(parent),
@@ -13,6 +14,13 @@ Instrument::~Instrument()
 {
     Utils::DestructorMsg(this);
 }
+
+
+void Instrument::Initialize()
+{    //Fake making a TCP connection
+    QThread::msleep(5000);
+}
+
 
 void Instrument::onPowerChanged(bool value)
 {
