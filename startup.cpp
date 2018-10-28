@@ -5,12 +5,16 @@
 #include "Model/provider.h"
 #include "Model/settings.h"
 #include "Model/instrument.h"
+#include <QThread>
 
 Startup::Startup(QObject *parent) : QObject(parent),
     m_engine(*new QQmlApplicationEngine()),
     m_mainViewMgr(*new MainViewMgr()),
     m_settings (Provider::GetSettingsAsSingleton()),
-    m_instrument(*new Instrument(this))
+    m_instrument(*new Instrument(this,
+                                 m_settings,
+                                 Provider::GetConnectorForSingleUse(),
+                                 * new QThread()))
 {
     m_settings.ParseJsonData();
     m_mainViewMgr.Initialize(m_settings);
