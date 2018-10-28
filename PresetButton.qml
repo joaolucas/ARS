@@ -27,6 +27,8 @@ Item
         print ("Sending "+ velocity + " " +distance)
         distanceControl.knobCurrentValue = distance
         velocityControl.knobCurrentValue = velocity
+        MainViewMgr.distance = distance
+        MainViewMgr.velocity = velocity
     }
 
     ColumnLayout{

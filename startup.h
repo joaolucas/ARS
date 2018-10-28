@@ -4,6 +4,8 @@
 
 class QQmlApplicationEngine;
 class MainViewMgr;
+class Settings;
+class Instrument;
 
 class Startup : public QObject
 {
@@ -18,6 +20,10 @@ public slots:
 private:
     QQmlApplicationEngine& m_engine;
     MainViewMgr& m_mainViewMgr;
+    Settings& m_settings;
+    Instrument& m_instrument;
+
+    void WireMainViewMgrToInstrument();
 };
 
 #endif // STARTUP_H
