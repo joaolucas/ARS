@@ -20,8 +20,19 @@ void Connector::DoWork()
     auto host_name = m_settings.getHostName().toLocal8Bit();
     char* char_str = host_name.data();
     QThread::msleep(m_settings.getBootDelay());
-    emit notifyMessage("Connected.");
-    emit notifyDone(true);
+
+    bool result = false;
+    if(result){
+        emit notifyMessage("Connected.");
+
+    }else{
+        emit notifyMessage("Unable to connect to instrument at address:"+
+                           host_name + ".\n"+
+                           "Instrument won't function properly.");
+    }
+
+
+    emit notifyDone(false);
 }
 
 
