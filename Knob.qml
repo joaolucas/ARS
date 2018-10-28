@@ -57,7 +57,7 @@ Rectangle
         {
             currentValue = new_value
             knobImageId.rotation = rotDeg + 90.0
-            oldValue = new_value
+            oldValue = new_value           
         }
      }
 

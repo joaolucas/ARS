@@ -16,4 +16,7 @@
         <file>images/swatteam.png</file>
         <file>images/TextBorder.png</file>
     </qresource>
+    <qresource prefix="/json">
+        <file>settings.json</file>
+    </qresource>
 </RCC>

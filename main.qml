@@ -26,14 +26,15 @@ ApplicationWindow {
     property real minDistance  : 70
     property real maxDistance : 200
     //Preset properties
-    property var velocities : [250,
-        -250,
-        15.0,
-        225.5]
-    property var distances : [100,
-        120.0,
-        75,
-        190]
+    property var velocities : [MainViewMgr.velocityPreset1,
+        MainViewMgr.velocityPreset2,
+        MainViewMgr.velocityPreset3,
+        MainViewMgr.velocityPreset4]
+
+    property var distances : [MainViewMgr.distancePreset1,
+        MainViewMgr.distancePreset2,
+        MainViewMgr.distancePreset3,
+        MainViewMgr.distancePreset4]
 
 
     Gradient{
@@ -73,7 +74,8 @@ ApplicationWindow {
                 knobMaxValue: maxVelocity
                 labelText: "Velocity"
                 unitsText: "KPH"
-                knobCurrentValue: 100.1
+                knobCurrentValue: MainViewMgr.velocity
+                onKnobCurrentValueChanged: MainViewMgr.velocity = knobCurrentValue
             }
             KnobControl{
                 id: distanceId
@@ -81,7 +83,8 @@ ApplicationWindow {
                 knobMaxValue: maxDistance
                 labelText: "Distance"
                 unitsText: "M"
-                knobCurrentValue: 75
+                knobCurrentValue: MainViewMgr.distance
+                onKnobCurrentValueChanged: MainViewMgr.distance = knobCurrentValue
             }
 
         }

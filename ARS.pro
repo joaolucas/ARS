@@ -14,7 +14,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp \
     startup.cpp \
-    ViewManager/mainviewmgr.cpp
+    ViewManager/mainviewmgr.cpp \
+    Model/settings.cpp \
+    utils.cpp \
+    Model/provider.cpp \
+    Model/instrument.cpp
 
 RESOURCES += qml.qrc
 
@@ -32,4 +36,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     startup.h \
     ViewManager/mainviewmgr.h \
-    PropertyHelper.h
+    PropertyHelper.h \
+    Model/settings.h \
+    utils.h \
+    Model/provider.h \
+    Model/instrument.h
