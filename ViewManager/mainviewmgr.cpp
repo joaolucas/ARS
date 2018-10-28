@@ -20,15 +20,9 @@ MainViewMgr::MainViewMgr(QObject *parent) : QObject(parent)
    distancePreset2(0);
    distancePreset3(0);
    distancePreset4(0);
+   feedbackAreaVisible(true);
+   feedbackMessage("System Initializing....");
 
-//   connect(this, &MainViewMgr::powerOnChanged,
-//           &MainViewMgr::debugPowerOn);
-
-   connect(this, &MainViewMgr::velocityChanged,
-           &MainViewMgr::debugVelocityChange);
-
-   connect(this, &MainViewMgr::distanceChanged,
-           &MainViewMgr::debugDistanceChange);
 }
 
 
@@ -48,17 +42,21 @@ void MainViewMgr::Initialize(const Settings &config)
     distancePreset4(config.getDistance4());
 }
 
-//void MainViewMgr::debugPowerOn(bool value)
-//{
-//    cout << "In debugPowerOn with value:"<< value << endl;
-//}
-
-void MainViewMgr::debugVelocityChange(bool value)
+void MainViewMgr::onStatusMessageChanged(const QString &msg)
 {
-    cout << "In Velocity Change with value:"<< value << endl;
+    feedbackMessage(msg);
 }
 
-void MainViewMgr::debugDistanceChange(bool value)
+void MainViewMgr::onInstrumentInitializationDone(bool value)
 {
-    cout << "In Distance Change with value:"<< value << endl;
+    if (value)
+    {
+        feedbackAreaVisible(false);
+        instrumentControlsEnabled(true);
+    }
+    else
+    {
+        feedbackOKButtonVisible(true);
+
+    }
 }

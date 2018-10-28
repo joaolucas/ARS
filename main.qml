@@ -56,6 +56,7 @@ ApplicationWindow {
         Header{
             id: headerId
         }
+        Feedback{}
 
         //---- Controls Area -----
         RowLayout{
