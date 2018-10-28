@@ -75,6 +75,7 @@ ApplicationWindow {
                 labelText: "Velocity"
                 unitsText: "KPH"
                 knobCurrentValue: MainViewMgr.velocity
+                onKnobCurrentValueChanged: MainViewMgr.velocity = knobCurrentValue
             }
             KnobControl{
                 id: distanceId
@@ -83,6 +84,7 @@ ApplicationWindow {
                 labelText: "Distance"
                 unitsText: "M"
                 knobCurrentValue: MainViewMgr.distance
+                onKnobCurrentValueChanged: MainViewMgr.distance = knobCurrentValue
             }
 
         }

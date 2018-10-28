@@ -18,10 +18,14 @@ signals:
 
 public slots:
     void onPowerChanged(bool value);
+    void onDistanceChanged(double value);
+    void onVelocityChanged(double value);
 
 private:
     bool m_isConnected;
     void WriteRfPower(bool value);
+    void WriteSpeed(double speedKph);
+    void WriteDistance(double distanceMeters);
 };
 
 #endif // INTRUMENT_H

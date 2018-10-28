@@ -25,4 +25,10 @@ void Startup::WireMainViewMgrToInstrument()
 {
      connect(&m_mainViewMgr, &MainViewMgr::powerOnChanged,
               &m_instrument,&Instrument::onPowerChanged);
+
+     connect(&m_mainViewMgr, &MainViewMgr::distanceChanged,
+              &m_instrument,&Instrument::onDistanceChanged);
+
+     connect(&m_mainViewMgr, &MainViewMgr::velocityChanged,
+              &m_instrument,&Instrument::onVelocityChanged);
 }
