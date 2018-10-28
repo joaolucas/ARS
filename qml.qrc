@@ -6,6 +6,7 @@
         <file>KnobControl.qml</file>
         <file>PresetButton.qml</file>
         <file>RfPower.qml</file>
+        <file>Feedback.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file>images/knob.png</file>
@@ -15,6 +16,8 @@
         <file>images/preset_up.png</file>
         <file>images/swatteam.png</file>
         <file>images/TextBorder.png</file>
+        <file>images/okdown.png</file>
+        <file>images/okup.png</file>
     </qresource>
     <qresource prefix="/json">
         <file>settings.json</file>
