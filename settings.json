@@ -9,7 +9,7 @@
   "rxIfAttenDb":10,
   "txIfAttenDb":10,
   "initialPowerState": false,
-  "bootDelay": 10000,
+  "bootDelay": 25000,
   "distance1": 100,
   "speed1":250,
   "distance2": 120,
