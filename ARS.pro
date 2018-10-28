@@ -31,4 +31,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     startup.h \
-    ViewManager/mainviewmgr.h
+    ViewManager/mainviewmgr.h \
+    PropertyHelper.h
