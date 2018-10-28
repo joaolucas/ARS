@@ -33,7 +33,7 @@ class MainViewMgr : public QObject
 signals:
 
 public slots:
-    void debugPowerOn(bool value);
+    //void debugPowerOn(bool value);
     void debugVelocityChange(bool value);
     void debugDistanceChange(bool value);
 

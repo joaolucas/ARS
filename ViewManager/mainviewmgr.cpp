@@ -21,8 +21,8 @@ MainViewMgr::MainViewMgr(QObject *parent) : QObject(parent)
    distancePreset3(0);
    distancePreset4(0);
 
-   connect(this, &MainViewMgr::powerOnChanged,
-           &MainViewMgr::debugPowerOn);
+//   connect(this, &MainViewMgr::powerOnChanged,
+//           &MainViewMgr::debugPowerOn);
 
    connect(this, &MainViewMgr::velocityChanged,
            &MainViewMgr::debugVelocityChange);
@@ -48,10 +48,10 @@ void MainViewMgr::Initialize(const Settings &config)
     distancePreset4(config.getDistance4());
 }
 
-void MainViewMgr::debugPowerOn(bool value)
-{
-    cout << "In debugPowerOn with value:"<< value << endl;
-}
+//void MainViewMgr::debugPowerOn(bool value)
+//{
+//    cout << "In debugPowerOn with value:"<< value << endl;
+//}
 
 void MainViewMgr::debugVelocityChange(bool value)
 {

@@ -17,7 +17,8 @@ SOURCES += main.cpp \
     ViewManager/mainviewmgr.cpp \
     Model/settings.cpp \
     utils.cpp \
-    Model/provider.cpp
+    Model/provider.cpp \
+    Model/instrument.cpp
 
 RESOURCES += qml.qrc
 
@@ -38,4 +39,5 @@ HEADERS += \
     PropertyHelper.h \
     Model/settings.h \
     utils.h \
-    Model/provider.h
+    Model/provider.h \
+    Model/instrument.h
