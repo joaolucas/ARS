@@ -34,6 +34,9 @@ signals:
 
 public slots:
     void debugPowerOn(bool value);
+    void debugVelocityChange(bool value);
+    void debugDistanceChange(bool value);
+
 
 private:
     //   QString m_appName;
