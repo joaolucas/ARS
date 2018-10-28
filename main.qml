@@ -20,24 +20,21 @@ ApplicationWindow {
     property int rowLeftMargin : 30
     property string boldLabelFont: "Impact"
     property real hoverOpacity : .85
-    property url powerOnSource : "images/images/power_on.png"
-    property url powerOffSource : "images/images/power_off.png"
-    property url powerSource : powerOffSource
-    property bool powerOn : MainViewMgr.powerOn
-
-
-    function togglePower()
-    {
-        print ("main.qml in togglePower with value "+ powerOn)
-        powerOn = ! powerOn
-        powerSource = powerOn ? powerOnSource : powerOffSource
-        MainViewMgr.powerOn = powerOn
-    }
 
     property real minVelocity : -250
     property real maxVelocity : 250
     property real minDistance  : 70
     property real maxDistance : 200
+    //Preset properties
+    property var velocities : [250,
+        -250,
+        15.0,
+        225.5]
+    property var distances : [100,
+        120.0,
+        75,
+        190]
+
 
     Gradient{
         id:appGradientId
@@ -69,42 +66,27 @@ ApplicationWindow {
                 right: parent.right
                 leftMargin: rowLeftMargin
             }
-            ColumnLayout
-            {
-                id : powerAreaId
-                Layout.alignment: Qt.AlignTop
-                Text {
-                    text: "RF Power"
-                    Layout.alignment: Qt.AlignCenter
-                    color:"white"
-                    font.pointSize: 16
-                    font.family: boldLabelFont
-                }
-                Image {
-                    id :powerButtonId
-                    source: powerSource
-                    Layout.preferredWidth: 64
-                    Layout.preferredHeight: Layout.preferredWidth
-                    MouseArea{
-                        onClicked: togglePower()
-                        anchors.fill: parent
-                        hoverEnabled: true
-                        onHoveredChanged: parent.opacity =
-                                          containsMouse ? hoverOpacity : 1.0
-                    }
-                }
+            RfPower{}
+            KnobControl{
+                id: velocityId
+                knobMinValue: minVelocity
+                knobMaxValue: maxVelocity
+                labelText: "Velocity"
+                unitsText: "KPH"
+                knobCurrentValue: 100.1
             }
-            ColumnLayout
-            {
-                id:velocityColumnId
+            KnobControl{
+                id: distanceId
+                knobMinValue: minDistance
+                knobMaxValue: maxDistance
+                labelText: "Distance"
+                unitsText: "M"
+                knobCurrentValue: 75
+            }
 
-            }
-            ColumnLayout
-            {
-                id:distanceColumnId
-            }
         }
 
+             //        Preset Buttons Row
         RowLayout{
             id: presetRowId
             anchors{
@@ -115,7 +97,46 @@ ApplicationWindow {
                 leftMargin: 30
             }
             Layout.alignment: Qt.AlignBottom
+
+            PresetButton{
+                presetTitle: "Preset 1"
+                labelFont : boldLabelFont
+                velocity :velocities[0]
+                distance: distances[0]
+                velocityControl: velocityId
+                distanceControl: distanceId
+                hoverOpacity: mainViewWindow.hoverOpacity
+            }
+            PresetButton{
+                presetTitle: "Preset 2"
+                labelFont : boldLabelFont
+                velocity :velocities[1]
+                distance: distances[1]
+                velocityControl: velocityId
+                distanceControl: distanceId
+                hoverOpacity: mainViewWindow.hoverOpacity
+            }
+            PresetButton{
+                presetTitle: "Preset 3"
+                labelFont : boldLabelFont
+                velocity :velocities[2]
+                distance: distances[2]
+                velocityControl: velocityId
+                distanceControl: distanceId
+                hoverOpacity: mainViewWindow.hoverOpacity
+            }
+            PresetButton{
+                presetTitle: "Preset 4"
+                labelFont : boldLabelFont
+                velocity :velocities[3]
+                distance: distances[3]
+                velocityControl: velocityId
+                distanceControl: distanceId
+                hoverOpacity: mainViewWindow.hoverOpacity
+            }
+
         }
+        //Four PresetButton QML Components
     }
 
 }

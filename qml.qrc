@@ -2,6 +2,10 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>Header.qml</file>
+        <file>Knob.qml</file>
+        <file>KnobControl.qml</file>
+        <file>PresetButton.qml</file>
+        <file>RfPower.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file>images/knob.png</file>
