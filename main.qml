@@ -56,10 +56,18 @@ ApplicationWindow {
         Header{
             id: headerId
         }
-        Feedback{}
+        Feedback{
+            NumberAnimation on opacity {
+                from: 0
+                to: .85
+                duration: 2000
+                easing.type: Easing.OutQuad
+            }
+        }
 
         //---- Controls Area -----
         RowLayout{
+            enabled: MainViewMgr.instrumentControlsEnabled
             id: powerKnobRowId
             anchors{
                 top: headerId.bottom
@@ -93,6 +101,7 @@ ApplicationWindow {
              //        Preset Buttons Row
         RowLayout{
             id: presetRowId
+            enabled: MainViewMgr.instrumentControlsEnabled
             anchors{
                 bottom : parent.bottom
                 bottomMargin: 10

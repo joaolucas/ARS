@@ -3,6 +3,7 @@
 #include <QObject>
 
 class QQmlApplicationEngine;
+class QTimer;
 class MainViewMgr;
 class Settings;
 class Instrument;
@@ -16,14 +17,19 @@ public:
 signals:
 
 public slots:
+      void onTimerFired();
 
 private:
     QQmlApplicationEngine& m_engine;
     MainViewMgr& m_mainViewMgr;
     Settings& m_settings;
     Instrument& m_instrument;
+    int m_bootDelay;
+    QTimer& m_timer;
 
     void WireMainViewMgrToInstrument();
+    void WireInstrumentToMainViewMgr();
+    void setupBootDelayTimer();
 };
 
 #endif // STARTUP_H
