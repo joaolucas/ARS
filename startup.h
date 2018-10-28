@@ -4,6 +4,7 @@
 
 class QQmlApplicationEngine;
 class MainViewMgr;
+class Settings;
 
 class Startup : public QObject
 {
@@ -18,6 +19,7 @@ public slots:
 private:
     QQmlApplicationEngine& m_engine;
     MainViewMgr& m_mainViewMgr;
+    Settings& m_settings;
 };
 
 #endif // STARTUP_H
